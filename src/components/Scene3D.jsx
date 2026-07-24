@@ -97,7 +97,6 @@ function CompizCube() {
             position={[-0.92, -0.72, 1.32]}
             fontSize={0.16}
             color="#F4EFE3"
-            font="https://fonts.gstatic.com/s/jetbrainsmono/v18/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKxjPVmUsaaDhw.woff"
             anchorX="left"
           >
             {w.label}
