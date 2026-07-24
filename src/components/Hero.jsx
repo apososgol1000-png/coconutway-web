@@ -1,6 +1,7 @@
 import { lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { ArrowDown, Code2, Download } from "lucide-react";
+import SceneErrorBoundary from "./SceneErrorBoundary";
 
 // El bundle de three.js + postprocessing es pesado: se carga aparte
 // para no bloquear el primer render de la página.
@@ -14,11 +15,15 @@ export default function Hero() {
     >
       {/* fondo 3D */}
       <div className="absolute inset-0">
-        <Suspense
+        <SceneErrorBoundary
           fallback={<div className="absolute inset-0 bg-aurora bg-ink" />}
         >
-          <Scene3D />
-        </Suspense>
+          <Suspense
+            fallback={<div className="absolute inset-0 bg-aurora bg-ink" />}
+          >
+            <Scene3D />
+          </Suspense>
+        </SceneErrorBoundary>
       </div>
 
       {/* velo para legibilidad del texto */}
